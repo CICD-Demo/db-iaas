@@ -18,9 +18,9 @@ items:
 - kind: Service
   apiVersion: v1beta3
   metadata:
-    name: mysql
+    name: db
     labels:
-      service: mysql
+      service: db
       function: backend
   spec:
     ports:
@@ -29,13 +29,13 @@ items:
 - kind: Endpoints
   apiVersion: v1beta3
   metadata:
-    name: mysql
+    name: db
     labels:
-      service: mysql
+      service: db
       function: backend
   subsets:
   - addresses:
-    - IP: 192.168.0.254
+    - IP: $IAAS_MYSQL_IP
     ports:
-    - port: 3306
+    - port: $IAAS_MYSQL_PORT
 EOF
