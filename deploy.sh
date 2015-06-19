@@ -20,7 +20,8 @@ items:
   metadata:
     name: mysql
     labels:
-      component: mysql
+      service: mysql
+      function: backend
   spec:
     ports:
     - port: 3306
@@ -30,7 +31,8 @@ items:
   metadata:
     name: mysql
     labels:
-      component: mysql
+      service: mysql
+      function: backend
   subsets:
   - addresses:
     - IP: 192.168.0.254
