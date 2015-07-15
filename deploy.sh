@@ -11,12 +11,12 @@ new_env MYSQL_PASSWORD $(random)
 
 . ../../environment
 
-osc create -f - <<EOF
+oc create -f - <<EOF
 kind: List
-apiVersion: v1beta3
+apiVersion: v1
 items:
 - kind: Service
-  apiVersion: v1beta3
+  apiVersion: v1
   metadata:
     name: db
     labels:
@@ -27,7 +27,7 @@ items:
     - port: 3306
 
 - kind: Endpoints
-  apiVersion: v1beta3
+  apiVersion: v1
   metadata:
     name: db
     labels:
